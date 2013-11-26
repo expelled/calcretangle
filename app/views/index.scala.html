@@ -1,0 +1,28 @@
+@(calcForm: Form[Application.Hello])
+
+@import helper._
+
+@main(title = "calculate Rectangle") {
+    
+    <h1>fill your rectangle ??</h1>
+    
+    @form(action = routes.Application.sayHello, args = 'id -> "calcForm") {
+        
+        @inputText(
+            field = calcForm("height"),
+            args = '_label -> "how height?", 'size -> 3,'placeholder -> "height"
+        )
+        
+        @inputText(
+            field = calcForm("width"),
+            args = '_label -> "How width?", 'size -> 3, 'placeholder -> "Width"
+        )
+        
+        
+        <p class="buttons">
+            <input type="submit">
+        <p>
+        
+    }
+    
+}
